@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
@@ -30,9 +30,12 @@ class ChooseDeliveryCarrier(models.TransientModel):
             return False
         text = str(value).replace("Z", "+00:00")
         try:
-            return datetime.fromisoformat(text)
+            dt = datetime.fromisoformat(text)
         except ValueError:
             return False
+        if dt.tzinfo is not None:
+            return dt.astimezone(timezone.utc).replace(tzinfo=None)
+        return dt
 
     def _get_shipment_rate(self):
         if self.carrier_id.delivery_type != "zipnova":
