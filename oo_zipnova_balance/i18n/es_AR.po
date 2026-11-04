@@ -1,0 +1,95 @@
+# Translation of Odoo Server.
+# * oo_zipnova_balance
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Language: es_AR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: oo_zipnova_balance
+#: model:ir.model,name:oo_zipnova_balance.model_zipnova_account_balance
+#: model:ir.actions.act_window,name:oo_zipnova_balance.action_zipnova_account_balance
+#: model:ir.actions.server,name:oo_zipnova_balance.action_server_zipnova_account_balance_open
+#: model:ir.ui.menu,name:oo_zipnova_balance.menu_zipnova_account_balance
+msgid "Zipnova Account Balance"
+msgstr "Saldo de cuenta Zipnova"
+
+#. module: oo_zipnova_balance
+#: model:ir.model.fields,field_description:oo_zipnova_balance.field_zipnova_account_balance__account_id
+msgid "Zipnova Account ID"
+msgstr "ID de cuenta Zipnova"
+
+#. module: oo_zipnova_balance
+#: model:ir.model.fields,field_description:oo_zipnova_balance.field_zipnova_account_balance__balance
+msgid "Current Balance (Debt)"
+msgstr "Saldo actual (deuda)"
+
+#. module: oo_zipnova_balance
+#: model:ir.model.fields,field_description:oo_zipnova_balance.field_zipnova_account_balance__credit_limit
+msgid "Credit Limit"
+msgstr "Límite de crédito"
+
+#. module: oo_zipnova_balance
+#: model:ir.model.fields,field_description:oo_zipnova_balance.field_zipnova_account_balance__credit_limit_currency
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: oo_zipnova_balance
+#: model:ir.model.fields,field_description:oo_zipnova_balance.field_zipnova_account_balance__available
+msgid "Available Credit"
+msgstr "Crédito disponible"
+
+#. module: oo_zipnova_balance
+#: model:ir.model.fields,field_description:oo_zipnova_balance.field_zipnova_account_balance__last_update
+msgid "Last Update"
+msgstr "Última actualización"
+
+#. module: oo_zipnova_balance
+#: model:ir.model.fields,field_description:oo_zipnova_balance.field_zipnova_account_balance__last_error
+msgid "Last Error"
+msgstr "Último error"
+
+#. module: oo_zipnova_balance
+#: model:ir.model.fields,field_description:oo_zipnova_balance.field_zipnova_account_balance__state
+msgid "State"
+msgstr "Estado"
+
+#. module: oo_zipnova_balance
+#: model_terms:ir.ui.view,arch_db:oo_zipnova_balance.zipnova_account_balance_view_form
+msgid "Refresh Balance"
+msgstr "Actualizar saldo"
+
+#. module: oo_zipnova_balance
+#: model_terms:ir.ui.view,arch_db:oo_zipnova_balance.zipnova_account_balance_view_form
+msgid "Go to Zipnova (view balance and pay)"
+msgstr "Ir a Zipnova (ver saldo y pagar)"
+
+#. module: oo_zipnova_balance
+#: model_terms:ir.ui.view,arch_db:oo_zipnova_balance.zipnova_account_balance_view_form
+msgid "Informative only: no vendor bills or purchase orders are created."
+msgstr "Solo informativo: no se crean facturas de proveedor ni órdenes de compra."
+
+#. module: oo_zipnova_balance
+#. odoo-python
+#: code:addons/oo_zipnova_balance/models/zipnova_account_balance.py:0
+msgid "Unexpected error querying Zipnova: %s"
+msgstr "Error inesperado al consultar Zipnova: %s"
+
+#. module: oo_zipnova_balance
+#. odoo-python
+#: code:addons/oo_zipnova_balance/models/zipnova_account_balance.py:0
+msgid "Zipnova returned an invalid (non JSON) response."
+msgstr "Zipnova devolvió una respuesta inválida (no JSON)."
+
+#. module: oo_zipnova_balance
+#: model:ir.model.constraint,message:oo_zipnova_balance.constraint_zipnova_account_balance_company_uniq
+msgid "Only one Zipnova balance per company."
+msgstr "Solo puede haber un saldo Zipnova por compañía."
+
+#. module: oo_zipnova_balance
+#: model:ir.actions.server,name:oo_zipnova_balance.ir_cron_zipnova_balance_refresh_ir_actions_server
+msgid "Zipnova: refresh account balances"
+msgstr "Zipnova: actualizar saldos de cuenta"

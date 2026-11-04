@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="zipnova_account_balance_view_tree" model="ir.ui.view">
+        <field name="name">zipnova.account.balance.tree</field>
+        <field name="model">zipnova.account.balance</field>
+        <field name="arch" type="xml">
+            <tree create="0" edit="0" delete="0" decoration-danger="state == 'error'">
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="account_id"/>
+                <field name="balance"/>
+                <field name="credit_limit"/>
+                <field name="credit_limit_currency"/>
+                <field name="available"/>
+                <field name="last_update"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="zipnova_account_balance_view_form" model="ir.ui.view">
+        <field name="name">zipnova.account.balance.form</field>
+        <field name="model">zipnova.account.balance</field>
+        <field name="arch" type="xml">
+            <form create="0" edit="0" delete="0" duplicate="0">
+                <header>
+                    <button name="action_refresh" type="object" string="Refresh Balance" class="btn-primary"/>
+                    <button name="action_open_zipnova_web" type="object" string="Go to Zipnova (view balance and pay)"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="alert alert-danger" role="alert" invisible="state != 'error' or not last_error">
+                        <field name="last_error" nolabel="1"/>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="account_id"/>
+                            <field name="last_update"/>
+                        </group>
+                        <group>
+                            <field name="balance"/>
+                            <field name="credit_limit"/>
+                            <field name="credit_limit_currency"/>
+                            <field name="available"/>
+                        </group>
+                    </group>
+                    <p class="text-muted">Informative only: no vendor bills or purchase orders are created.</p>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_zipnova_account_balance" model="ir.actions.act_window">
+        <field name="name">Zipnova Account Balance</field>
+        <field name="res_model">zipnova.account.balance</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_server_zipnova_account_balance_open" model="ir.actions.server">
+        <field name="name">Zipnova Account Balance</field>
+        <field name="model_id" ref="model_zipnova_account_balance"/>
+        <field name="state">code</field>
+        <field name="code">action = model.action_open_balance()</field>
+    </record>
+
+    <menuitem id="menu_zipnova_account_balance"
+              name="Zipnova Account Balance"
+              parent="purchase.menu_purchase_root"
+              action="action_server_zipnova_account_balance_open"
+              groups="purchase.group_purchase_user"
+              sequence="98"/>
+</odoo>

@@ -1,0 +1,20 @@
+{
+    "name": "Zipnova Account Balance",
+    "summary": "Read-only Zipnova account balance (debt, credit limit, available credit) in Purchase",
+    "version": "17.0.1.0.0",
+    "category": "Inventory/Purchase",
+    "author": "OnlyOne",
+    "maintainers": ["onlyone-odoo"],
+    "website": "https://www.onlyone.com.ar",
+    "license": "LGPL-3",
+    "depends": ["zipnova", "purchase"],
+    "data": [
+        "security/zipnova_balance_security.xml",
+        "security/ir.model.access.csv",
+        "data/ir_config_parameter_data.xml",
+        "data/ir_cron_data.xml",
+        "views/zipnova_account_balance_views.xml",
+    ],
+    "installable": True,
+    "application": False,
+}

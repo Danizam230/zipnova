@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_zipnova_account_balance_purchase_user,zipnova.account.balance purchase user,model_zipnova_account_balance,purchase.group_purchase_user,1,0,0,0
+access_zipnova_account_balance_purchase_manager,zipnova.account.balance purchase manager,model_zipnova_account_balance,purchase.group_purchase_manager,1,0,0,0
+access_zipnova_account_balance_system,zipnova.account.balance system,model_zipnova_account_balance,base.group_system,1,1,1,1
