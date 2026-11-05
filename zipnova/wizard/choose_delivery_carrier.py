@@ -34,9 +34,9 @@ class ChooseDeliveryCarrier(models.TransientModel):
         except ValueError:
             return False
 
-    def _get_shipment_rate(self):
+    def _get_delivery_rate(self):
         if self.carrier_id.delivery_type != "zipnova":
-            return super()._get_shipment_rate()
+            return super()._get_delivery_rate()
         vals = self.carrier_id.with_context(
             order_weight=self.total_weight
         ).rate_shipment(self.order_id)

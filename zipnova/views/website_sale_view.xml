@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="address_zipnova" inherit_id="website_sale.address">
+    <template id="address_zipnova" inherit_id="portal.address_form_fields">
         <xpath expr="//input[@id='o_street']" position="attributes">
             <attribute name="placeholder">Ej: Avenida Siempreviva 742</attribute>
         </xpath>
